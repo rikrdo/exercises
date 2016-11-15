@@ -15,13 +15,11 @@
 run(TestString)->
 	{analize(TestString,[]),TestString}.
 
-analize([],Evaluate) ->
-				if
-					Evaluate==[] ->
-						true;
-					true ->
-						false
-				end
+analize([],[]) ->
+	true
+;
+analize([],_) ->
+	false
 ;
 analize([H|Tail],Evaluate) ->
 				if
@@ -53,3 +51,5 @@ checkOpen(Evaluate,Tail,Open)->
 	end.
 
 head([H|_])	->	H.
+
+
